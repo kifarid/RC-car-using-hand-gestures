@@ -20,6 +20,8 @@ from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 print('Keras image data format: {}'.format(K.image_data_format()))
 
+#you should modify this to collect data of given label and wether it's training or validation accordingly
+# a directory which is called training_data/labelX should contain the training data images of label X (CURR_POS)
 CURR_POSE = 'five'
 DATA = 'validation_data'
 
@@ -41,16 +43,10 @@ bg = frame.copy()
 # Kernel for erosion and dilation of masks
 kernel = np.ones((3, 3), np.uint8)
 
-# Tracking
+# position for the bounding box which contains the hand crop
 # Bounding box -> (TopRightX, TopRightY, Width, Height)
 bbox_initial = (60, 60, 170, 170)
 bbox = bbox_initial
-
-# Text display positions
-positions = {
-    'hand_pose': (15, 40),
-    'fps': (15, 20)
-}
 
 # Image count for file name
 img_count = 0
@@ -67,7 +63,7 @@ while True:
     timer = cv2.getTickCount()
 
     # Processing
-    # First find the absolute difference between the two images
+    # finding the absolute difference between the two images and converting RGB to GRAY
     diff = cv2.absdiff(bg, frame)
     mask = cv2.cvtColor(diff, cv2.COLOR_RGB2GRAY)
     # Threshold the mask
@@ -110,7 +106,7 @@ while True:
         bbox = bbox_initial
 
     elif k == 115:
-        # s pressed`
+        # s pressed`means saving the image
         img_count += 1
         fname = os.path.join(DATA, CURR_POSE, "{}_{}.jpg".format(CURR_POSE, img_count))
         cv2.imwrite(fname, hand_crop)
