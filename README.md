@@ -1,10 +1,13 @@
 # Control-of-car-using-hand-gestures
 
 ## Table of contents
-- [Team Members](#Team Members)
-- Project Demo
-- Technologies
-- Contributing
+- [Team Members](#team-members)
+- [Project Demo](#project-demo)
+- [Technologies](#technologies)
+- [Codes](#codes)
+- [Contributing:](#contributing-)
+
+
 
 
 
