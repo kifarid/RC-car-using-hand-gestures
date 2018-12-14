@@ -1,4 +1,4 @@
-# Control-of-car-using-hand-gestures
+# Control of car using hand gestures
 
 ## Table of contents
 - [Team Members](#team-members)
