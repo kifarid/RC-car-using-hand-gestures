@@ -6,7 +6,7 @@
 - [Desricption](#description)
 - [Technologies](#technologies)
 - [Project Video](#project-video)
-- [Contributing](#contributing-)
+- [Contributing](#contributing)
 
 
 
