@@ -33,10 +33,8 @@ This project we have designed a simple Hand Gesture Controlled Robot using Raspe
 
 
 ## Technologies
-### created with:
--
--
--
+created with:
+
 
 
 ## Project Video
