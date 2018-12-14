@@ -5,7 +5,6 @@
 - [Project Demo](#project-demo)
 - [Desricption](#description)
 - [Technologies](#technologies)
-- [Sample Codes](#sample-codes)
 - [Project Video](#project-video)
 - [Contributing](#contributing-)
 
