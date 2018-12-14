@@ -44,7 +44,7 @@ created with:
 
 
 
-## Contributing:
+## Contributing
 The preprocessing and collection of data is based on the following tutorial [ Computer Vision and Machine Learning with Python, Keras and OpenCV](https://github.com/jrobchin/Computer-Vision-Basics-with-Python-Keras-and-OpenCV/).
 
 
