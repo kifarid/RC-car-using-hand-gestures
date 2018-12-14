@@ -4,8 +4,10 @@
 - [Team Members](#team-members)
 - [Project Demo](#project-demo)
 - [Technologies](#technologies)
-- [Codes](#codes)
-- [Contributing:](#contributing-)
+- [Sample Codes](#sample-codes)
+- [Video Link](#video-link)
+- [Contributing](#contributing-)
+
 
 
 
@@ -28,12 +30,15 @@ This project we have designed a simple Hand Gesture Controlled Robot using Raspe
 
 ## Technologies
 
-Created with:
+### Created with:
+-
+-
+-
 
+## Sample Codes
 
-
-## Codes 
-
+## Video Link
+[Project Video]()
 
 
 
