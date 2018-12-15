@@ -89,7 +89,7 @@ while True:
         
         if y[0,index] > 0.8:
             
-            if (index == 0): #lma n3ml 5
+            if (index == 0): #Pose 5
                 Label = "right"
                 counter_right=counter_right+1
                 if counter_right >= 20:
@@ -99,7 +99,7 @@ while True:
                     counter_stop=0
                     ll.turn_right()
                     
-            if (index == 1): #lma n3ml 1
+            if (index == 1): #Pose 1
                 Label = "left"
                 counter_left=counter_left+1
                 if counter_left >= 20:
@@ -109,7 +109,7 @@ while True:
                     counter_stop=0
                     ll.turn_left()
                     
-            if (index == 2): #lma n3ml 2
+            if (index == 2): #Pose 2
                 Label = "forward"
                 counter_forward=counter_forward+1
                 if counter_forward >= 20:
