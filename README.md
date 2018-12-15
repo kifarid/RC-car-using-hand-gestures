@@ -26,7 +26,6 @@
 ## Project Demo
 This project we have designed a simple Hand Gesture Controlled Robot using RasperryPi to classify 4 hand gestures (pointer,stop,punch,peace) using ensemble of deep learning architectures for control of car robot.This Hand Gesture Controlled Robot is based on RasperryPi, WebCam and L293D Motor Driver. 
 
-<a href="https://imgflip.com/gif/22n3o6"><img src="https://i.imgflip.com/22n3o6.gif"/></a>
 
 
 ## Desricption
