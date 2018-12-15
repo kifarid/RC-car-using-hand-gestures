@@ -4,9 +4,8 @@
 - [Team Members](#team-members)
 - [Project Demo](#project-demo)
 - [Description](#description)
-- [Technologies](#technologies)
 - [Project Video](#project-video)
-- [Contributing](#contributing)
+- [Contributions](#contributions)
 
 
 
@@ -63,7 +62,7 @@ The main platforms and libraries needed are:
 [Youtube](https://youtu.be/YxlOvFcngS4)
 
 
-## Contributing
+## Contributions
 The preprocessing and collection of data is based on the following tutorial [ Computer Vision and Machine Learning with Python, Keras and OpenCV](https://github.com/jrobchin/Computer-Vision-Basics-with-Python-Keras-and-OpenCV/).
 
 
