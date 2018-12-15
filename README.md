@@ -32,7 +32,6 @@ This project we have designed a simple Hand Gesture Controlled Robot using Raspe
 ## Desricption
 
 ### Contents
-[notebook.ipynb](https://github.com/jrobchin/Computer-Vision-Basics-with-Python-Keras-and-OpenCV/blob/master/notebook.ipynb) contains a full tutorial of basic computer vision and machine learning concepts, including:
 
 * *What computers see*
 * Image Filters and Functions
