@@ -1,4 +1,3 @@
-
 from keras.models import load_model
 import sys
 import os
@@ -8,7 +7,7 @@ import keras
 import numpy as np # matrix operations (ie. difference between two matricies)
 import cv2 # (OpenCV) computer vision functions (ie. tracking)
 from keras.preprocessing.image import load_img, img_to_array
-
+import Low_level as ll
 
 
 def main():
@@ -32,18 +31,12 @@ def main():
     # Bounding box -> (TopRightX, TopRightY, Width, Height)
     bbox_initial = (60, 60, 170, 170)
     bbox = bbox_initial
-
-    #model.summary()
-    #img = cv2.imread('validation_data/'+'five/'+'Peace.jpg')
-    #img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-    #th, thresh = cv2.threshold(img, 220, 255, cv2.THRESH_BINARY)
-    #thresh_2 = cv2.bitwise_not(thresh)
-    #img = cv2.resize(thresh_2, (64, 64))
-    #cv2.imshow('image',img)
-    #cv2.waitKey(0)
-    #img=np.reshape(img, (1, img.shape[0], img.shape[1],1))
-    #y=model.predict(img)
-    while True:
+    
+    counter_left=0
+    counter_right=0
+    counter_forward=0
+    counter_stop=0
+while True:
         # Read a new frame
         ok, frame = video.read()
         display = frame.copy()
@@ -87,13 +80,70 @@ def main():
         img = np.reshape(img, (1, img.shape[ 0 ], img.shape[ 1 ], 1))
         y = model.predict(img)
         img = cv2.resize(thresh_2, (64, 64))
+                
+        index = np.argmax(y)
+        #print("index is %d of value %f" % (index,y[index]))
         print(y)
+        print (index)
+        print (y[0,index])
+        
+        if y[0,index] > 0.8:
+            
+            if (index == 0): #lma n3ml 5
+                Label = "right"
+                counter_right=counter_right+1
+                if counter_right >= 20:
+                    counter_left=0
+                    counter_right=0
+                    counter_forward=0
+                    counter_stop=0
+                    ll.turn_right()
+                    
+            if (index == 1): #lma n3ml 1
+                Label = "left"
+                counter_left=counter_left+1
+                if counter_left >= 20:
+                    counter_left=0
+                    counter_right=0
+                    counter_forward=0
+                    counter_stop=0
+                    ll.turn_left()
+                    
+            if (index == 2): #lma n3ml 2
+                Label = "forward"
+                counter_forward=counter_forward+1
+                if counter_forward >= 20:
+                    counter_left=0
+                    counter_right=0
+                    counter_forward=0
+                    counter_stop=0                
+                    ll.forward()
+                    
+            if (index == 3): #lma n3ml 0
+                Label = "stop"
+                counter_stop=counter_stop+1
+                if counter_stop >= 20:
+                    counter_left=0
+                    counter_right=0
+                    counter_forward=0
+                    counter_stop=0
+                    ll.stop()
+                
+        else:
+            Label = "stop"
+            #ll.stop()
+            
+        print(Label)
         k = cv2.waitKey(1) & 0xff
 
         if k == 27:
             break  # ESC pressed
         elif k == 114 or k == 112:
             # r pressed
+            counter_left=0
+            counter_right=0
+            counter_forward=0
+            counter_stop=0
             bg = frame.copy()
             bbox = bbox_initial
 
@@ -101,6 +151,7 @@ def main():
             print(k)
     cv2.destroyAllWindows()
     video.release()
+    GPIO.cleanup()
 
 if __name__ == "__main__":
     main()
