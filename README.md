@@ -12,11 +12,6 @@
 ## Team Members
 - Omar Ahmed
 - Karim Ibrahim Yehia
-- Eslam Mohamed Abdelbassir
-- Ahmed Hesham
-- Karim Kamal Rizk
-- Ahmed Samir
-- Andrew Magdy
 
 
 
